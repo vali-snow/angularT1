@@ -4,8 +4,7 @@ import { Component } from '@angular/core';
   selector: 'events-app',
   //templateUrl: './app.component.html',
   template: `
-    <h2>Hello World</h2>
-    <img src="/assets/images/basic-shield.png"/>
+    <events-list></events-list>
   `,
   //styleUrls: ['./app.component.css']
 })
