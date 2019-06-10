@@ -4,8 +4,9 @@ import { Component, Input, Output, EventEmitter } from '@angular/core'
     selector: 'event-thumbnail',
     templateUrl: './event-thumbnail.component.html',
     styles: [`
-      .pad-left {margin-left: 10px; }
-      .well div {color: #bbb;}
+      .thumbnail { min-height: 240px; }
+      .pad-left { margin-left: 10px; }
+      .well div { color: #bbb;}
     `],
 })
 
