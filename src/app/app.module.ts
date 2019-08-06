@@ -25,7 +25,7 @@ let jQuery = window['$'];
     BrowserModule,
     FormsModule,
     ReactiveFormsModule,
-    RouterModule.forRoot(appRoutes, {onSameUrlNavigation: 'reload'})
+    RouterModule.forRoot(appRoutes)
   ],
   declarations: [
     EventsAppComponent,
