@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { EventService } from '../shared/event.service';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { IEvent, ISession } from '../shared/index';
 import { all } from 'q';
 
@@ -19,7 +19,11 @@ export class EventDetailsComponent {
   filterBy: string = 'all';
   sortBy: string = 'votes';
 
-  constructor(private eventService: EventService, private route: ActivatedRoute){}
+  constructor(private eventService: EventService, private route: ActivatedRoute, private router: Router){
+    this.router.routeReuseStrategy.shouldReuseRoute = function() {
+      return false;
+    };
+  }
 
   ngOnInit(){
     this.event = this.eventService.getEvent(+this.route.snapshot.params['id']);
