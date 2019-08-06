@@ -4,7 +4,8 @@ import { RouterModule, ActivatedRouteSnapshot } from '@angular/router';
 
 import {
   EventsListComponent, EventThumbnailComponent, EventDetailsComponent, CreateEventComponent, CreateSessionComponent, SessionListComponent,
-  EventService, EventRouteActivator, EventListResolver
+  EventService, EventRouteActivator, EventListResolver,
+  DurationPipe
 } from './events/index';
 
 import { EventsAppComponent } from './events-app.component';
@@ -34,7 +35,8 @@ import { Session } from 'protractor';
     Error404Component,
     CreateSessionComponent,
     SessionListComponent,
-    CollapsibleWellComponent
+    CollapsibleWellComponent,
+    DurationPipe
   ],
   providers: [
     EventService,
