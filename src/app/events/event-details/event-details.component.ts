@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { EventService } from '../shared/event.service';
 import { ActivatedRoute } from '@angular/router';
 import { IEvent, ISession } from '../shared/index';
+import { all } from 'q';
 
 @Component({
   templateUrl: './event-details.component.html',
@@ -15,6 +16,8 @@ import { IEvent, ISession } from '../shared/index';
 export class EventDetailsComponent {
   event:IEvent;
   addMode:boolean;
+  filterBy: string = 'all';
+
   constructor(private eventService: EventService, private route: ActivatedRoute){}
 
   ngOnInit(){
