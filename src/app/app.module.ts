@@ -1,14 +1,16 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { RouterModule, ActivatedRouteSnapshot } from '@angular/router';
+import { HttpClientModule } from '@angular/common/http';
 
 import {
   EventsListComponent, EventThumbnailComponent, EventDetailsComponent, CreateEventComponent, CreateSessionComponent, SessionListComponent,
-  EventService, EventRouteActivator, EventListResolver,
+  EventService, EventListResolver,
   DurationPipe,
   UpvoteComponent,
   VoterService,
   LocationValidator,
+  EventResolver,
 } from './events/index';
 
 import { EventsAppComponent } from './events-app.component';
@@ -28,7 +30,8 @@ let jQuery = window['$'];
     BrowserModule,
     FormsModule,
     ReactiveFormsModule,
-    RouterModule.forRoot(appRoutes)
+    RouterModule.forRoot(appRoutes),
+    HttpClientModule
   ],
   declarations: [
     EventsAppComponent,
@@ -53,15 +56,11 @@ let jQuery = window['$'];
       provide: JQ_TOKEN,
       useValue: jQuery
     },
+    EventResolver,
     {
       provide: TOASTR_TOKEN,
       useValue: toastr
     },
-    EventRouteActivator,
-    // {
-    //   provide: EventRouteActivator,
-    //   useClass: EventRouteActivator,
-    // },
     EventListResolver,
     AuthService,
     VoterService,
